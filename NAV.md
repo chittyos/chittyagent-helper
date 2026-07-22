@@ -63,6 +63,14 @@ curl -sS https://register.chitty.cc/api/v1/compliance/chittyhelper | jq .
 
 ## Key Concepts
 
+### Register vs Registry vs Discovery (load-bearing distinction)
+
+- **ChittyRegister** (verb, Tier 1) — gatekeeper at `register.chitty.cc`. Submit to it.
+- **ChittyRegistry** (noun, Tier 2) — directory at `registry.chitty.cc`. Read from it. Direct writes return `READ_ONLY` pointing to Register.
+- **ChittyDiscovery** (Tier 3) — runtime mesh at `discovery.chitty.cc`. Resolves live endpoints.
+
+Three different services, same prefix, frequently confused. Mnemonic: verb / noun / adverb.
+
 ### System Classification
 - **Class:** III - Informational Navigator
 - **Authority:** Non-authoritative
